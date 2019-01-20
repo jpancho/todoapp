@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link to="/" className="navbar-brand">Todo App</Link>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
