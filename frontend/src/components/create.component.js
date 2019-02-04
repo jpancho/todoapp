@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateTodo
   extends Component {
@@ -43,6 +44,15 @@ export default class CreateTodo
     console.log(`Description: ${this.state.todo_description}`);
     console.log(`Priority: ${this.state.todo_priority}`);
     console.log(`Completed: ${this.state.todo_completed}`);
+
+    const newTodo = {
+      todo_description: this.state.todo_description,
+      todo_priority: this.state.todo_priority,
+      todo_completed: this.state.todo_completed
+    };
+
+    axios.post('http://localhost:3001/todos/add', newTodo)
+      .then(res => console.log(res.data));
 
     this.setState({
       todo_description: '',
